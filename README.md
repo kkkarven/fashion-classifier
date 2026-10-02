@@ -23,7 +23,8 @@ PyTorch CUDA runtime: 12.8
 
 PyTorch can use CUDA: True
 GPU: NVIDIA GeForce RTX 3050 Laptop GPU
-GPU memory GiB: 4.0```
+GPU memory GiB: 4.0
+```
 ## 安装与运行
 - 待补充
 ## 实验结果
