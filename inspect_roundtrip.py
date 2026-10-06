@@ -8,7 +8,7 @@ def main():
     _ , _ , test_data = build_datasets()
 
     modelA = FashionMLP()   
-    mlp_record = torch.load(f = "/home/hp/fashion-classifier/fashion_mlp.pt",map_location = "cpu",weights_only = True)
+    mlp_record = torch.load(f = "fashion_mlp.pt",map_location = "cpu",weights_only = True)
     modelA.load_state_dict(mlp_record)
     index = random.randrange(len(test_data))
     apictrue, label = test_data[index]
@@ -33,10 +33,10 @@ def main():
     assert torch.isfinite(logitsA).all()
 
     record = modelA.state_dict()
-    torch.save(record,"/home/hp/fashion-classifier/fashion_mlp_A.pt")
+    torch.save(record,"fashion_mlp_A.pt")
 
     modelB = FashionMLP()   
-    mlp_record = torch.load(f = "/home/hp/fashion-classifier/fashion_mlp_A.pt",map_location = "cpu",weights_only = True)
+    mlp_record = torch.load(f = "fashion_mlp_A.pt",map_location = "cpu",weights_only = True)
     modelB.load_state_dict(mlp_record)
     modelB.eval()
     

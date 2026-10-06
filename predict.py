@@ -8,7 +8,7 @@ def main():
     _ , _ , test_data = build_datasets()
 
     model = FashionMLP()   
-    mlp_record = torch.load(f = "/home/hp/fashion-classifier/fashion_mlp.pt",map_location = "cpu",weights_only = True)
+    mlp_record = torch.load(f = "fashion_mlp.pt",map_location = "cpu",weights_only = True)
     model.load_state_dict(mlp_record)
     index = random.randrange(len(test_data))
     apictrue, label = test_data[index]

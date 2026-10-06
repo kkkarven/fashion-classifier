@@ -104,7 +104,7 @@ def main():
         print(f"第{epoch}/{epochs}轮")
         record = model.state_dict()
         if total_accuracy > best_accuracy:
-            torch.save(record,"/home/hp/fashion-classifier/fashion_mlp.pt")
+            torch.save(record,"fashion_mlp.pt")
             print(f"第{epoch}轮内容已保存为最佳")
             best_accuracy = total_accuracy
 if __name__ == "__main__":
