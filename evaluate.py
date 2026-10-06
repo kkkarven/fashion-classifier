@@ -16,7 +16,7 @@ def main():
     )
     model = FashionMLP()
     loss_fn = nn.CrossEntropyLoss()  
-    mlp_record = torch.load(f = "/home/hp/fashion-classifier/fashion_mlp.pt",map_location = "cpu",weights_only = True)
+    mlp_record = torch.load(f = "fashion_mlp.pt",map_location = "cpu",weights_only = True)
     model.load_state_dict(mlp_record)
 
     model.eval()
@@ -64,7 +64,7 @@ def main():
         test_mean_loss = test_total_loss / test_total_samples  # TODO：根据累计结果计算            
         total_accuracy = total_correct/ test_total_samples
             # 1. 创建图片保存目录
-        output_dir = Path("/home/hp/fashion-classifier/reports")
+        output_dir = Path("reports")
         output_dir.mkdir(parents=True, exist_ok=True)
         output_path = output_dir / "errors.png"
 

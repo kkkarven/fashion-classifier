@@ -10,7 +10,7 @@ def main():
         train_data, val_data, test_data
     )
     model = FashionMLP()   
-    mlp_record = torch.load(f = "/home/hp/fashion-classifier/fashion_mlp.pt",map_location = "cpu",weights_only = True)
+    mlp_record = torch.load(f = "fashion_mlp.pt",map_location = "cpu",weights_only = True)
     model.load_state_dict(mlp_record)
     batch_iterator = iter(val_loader)
     images, labels = next(batch_iterator)
